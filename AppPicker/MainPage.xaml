@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="AppPicker.MainPage">
+
+    <StackLayout>
+        <Label Text="Brincando com a matematica" 
+                   HorizontalOptions="Center" 
+                   TextColor="Black" 
+                   FontSize="Large"/>
+        <Entry x:Name="etValor" Keyboard="Numeric" 
+               Placeholder="Informe um numero inteiro positivo" />
+        <Picker x:Name="pkOperacao"
+        Title="Selecione uma tarefa"
+        TitleColor="Red">
+            <Picker.ItemsSource>
+                <x:Array Type="{x:Type x:String}">
+                    <x:String>Numero primo</x:String>
+                    <x:String>Numero par</x:String>
+                    <x:String>Calcular o fatorial</x:String>
+                </x:Array>
+            </Picker.ItemsSource>
+        </Picker>
+        <Button x:Name="btVerificar" Text="Verificar" Clicked="btVerificar_Clicked"/>
+        <Label x:Name="lbResposta" Text="Resposta" />
+    </StackLayout>
+
+</ContentPage>

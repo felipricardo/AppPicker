@@ -62,15 +62,33 @@ namespace AppPicker
         private void btVerificar_Clicked(object sender, EventArgs e)
         {
             int valor = Convert.ToInt32(etValor.Text);
+            String resposta = "";
             String iPicker = (String) pkOperacao.SelectedItem;
             if(iPicker == "Numero primo")
             {
-                String resposta = "Não é um numero primo";
+                resposta = "Não é um numero primo";
 
-                if (NumeroPrimo() == true)
+                if (NumeroPrimo(valor) == true)
                 {
                     resposta = "É um numero primo";
                 }
+                lbResposta.Text = resposta;
+            }
+            if(iPicker == "Numero par")
+            {
+                resposta = "O numero informado é impar";
+
+                if (NumeroPar(valor) == true)
+                {
+                    resposta = "O numero informado é par";
+                }
+                lbResposta.Text = resposta;
+            }
+            if(pkOperacao.SelectedIndex == 2)
+            {
+                int fatorial = CalculaFatorial(valor);
+                lbResposta.Text = "O fatorial do numero " + valor.ToString() + 
+                    " é " + fatorial.ToString();
             }
         }
     }
